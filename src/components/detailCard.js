@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "react-bootstrap/Image";
-import logo from "../assests/casa.png";
+import lr from "../assests/living.png";
+import k from "../assests/kitchen.png";
+import dr from "../assests/comedor.png";
+import { FormattedMessage } from "react-intl";
 
 
 const CardComponent = (props) => {
-  console.log("Props-card", props);
+
+  let imagen = lr
+  let name = <FormattedMessage id="LR" />
+  if (props.casa.name === 'Dinner room'){
+    imagen = dr
+    name = <FormattedMessage id="DR" />
+  }
+  else if (props.casa.name === 'Kitchen'){
+    imagen = k
+    name = <FormattedMessage id="K" />
+  }
+
+  
 
   return (
-    <div className="card">
+    <div className="card" style={{cursor:'pointer'}}>
       <div className="card-body">
-        <p className="card-text">{props.casa.name}</p>
+        <p className="card-text">{name}</p>
       </div>
       <Image
         className="card-img-top"
-        src={logo}
+        src={imagen}
         alt="Card image cap"
         fluid
       />

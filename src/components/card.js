@@ -1,29 +1,27 @@
 import React from "react";
 import Image from "react-bootstrap/Image";
 import logo from "../assests/casa.png";
-import Detail from "./detailCasa";
+import logo2 from "../assests/loft.jpg";
 
 
 const CardComponent = (props) => {
-  console.log("Props-card", props);
   
-  function nueva(id){
-      <Detail
-      homeId = {id}/>
+  let imagen = logo
+  if (props.casa.type === 'loft'){
+    imagen = logo2
   }
 
   return (
-    <div className="card">
+    <div className="card" style={{cursor:'pointer'}} >
       <Image
         className="card-img-top"
-        src={logo}
+        src={imagen}
         alt="Card image cap"
         fluid
       />
       <div className="card-body">
-        <h4 className="card-title">{props.casa.name}</h4>
+        <h5 className="card-title">{props.casa.name}</h5>
         <p className="card-text">{props.casa.address}</p>
-        <button onClick={nueva(props.casa.homeId)} className="btn btn-primary">Ver detalle</button>
       </div>
     </div>
   );

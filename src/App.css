@@ -24,6 +24,12 @@
   color: white;
 }
 
+.card-img-top {
+  width: 300px;
+  height: 20vw;
+  object-fit: cover;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -36,3 +42,5 @@
     transform: rotate(360deg);
   }
 }
+
+
