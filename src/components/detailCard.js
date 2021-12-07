@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "react-bootstrap/Image";
 import lr from "../assests/living.png";
 import k from "../assests/kitchen.png";

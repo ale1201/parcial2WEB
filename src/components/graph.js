@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { FormattedMessage } from "react-intl";
 import * as d3 from "d3";
 
@@ -75,7 +75,7 @@ function Stats(props) {
       <h2 style={{ textAlign: "left"}}>
         <FormattedMessage id="Stats" />
       </h2>
-      <div id="grafica">
+      <div id="chartD3">
         <svg ref={d3graph}></svg>
       </div>
     </div>
